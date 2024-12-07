@@ -1,38 +1,33 @@
-// Basic Function 
-var calculateArea = function (lenght, width) {
-    var area = lenght * width;
-    return area;
+//object 
+var user = {
+    name: "subhan",
+    date: "12/12/1211"
 };
-console.log(calculateArea(3, 5));
-// Array Operations
-var arr = [1, 34, 104, 23, 78, 12];
-var max = function (arr) {
-    var num = arr[0];
-    var lenght = arr.length;
-    for (var i = 1; i < lenght; i++) {
-        if (arr[i] > num) {
-            num = arr[i];
-        }
+console.log(user);
+console.log(user.name);
+console.log(user.date);
+user.name = "Ali",
+    console.log(user.name);
+var person = {
+    name: "Subhan",
+    age: 23,
+    price: 34,
+    tax: 10,
+    calculate: function (price, tax) {
+        return price + tax;
     }
-    return num;
 };
-console.log(max(arr));
-// Tuple as a Return Type
-var studentDetails = function (name, age, num) {
-    var pass = false;
-    if (num > 33) {
-        pass = true;
+console.log(person);
+console.log(person.calculate(23, 10));
+var std = {
+    name: "Subhan",
+    age: 123,
+    marks: 45,
+};
+var marks = function (std) {
+    if (std.marks > 33) {
+        return true;
     }
-    return [name, age, pass];
+    return false;
 };
-console.log(studentDetails("subhan", 19, 88));
-var addproduct = function (product, newproduct) {
-    product.push(newproduct);
-    return product;
-};
-var array = [
-    ["abc", 12],
-    ["xyz", 32]
-];
-var pro = ["qwe", 57];
-console.log(addproduct(array, pro));
+console.log(marks(std));
