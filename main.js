@@ -1,56 +1,29 @@
-//Practice Question 
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var getArea = function (Shape, size) {
-    if (Shape == "Circle") {
-        return 3.14 * size * size;
+var Filepermission;
+(function (Filepermission) {
+    Filepermission[Filepermission["Read"] = 1] = "Read";
+    Filepermission[Filepermission["Write"] = 2] = "Write";
+    Filepermission[Filepermission["ReadWrite"] = 3] = "ReadWrite";
+})(Filepermission || (Filepermission = {}));
+console.log(Filepermission.Read);
+console.log(Filepermission.Write);
+console.log(Filepermission.ReadWrite);
+// 2
+var Season;
+(function (Season) {
+    Season[Season["Summer"] = 0] = "Summer";
+    Season[Season["Winter"] = 1] = "Winter";
+    Season[Season["Spring"] = 2] = "Spring";
+    Season[Season["Autumn"] = 3] = "Autumn";
+})(Season || (Season = {}));
+var getSeasonMessage = function (season) {
+    switch (season) {
+        case Season.Summer:
+            return "it's Summer holidays";
+        default:
+            return "dsfdsfdsf";
     }
-    else if (Shape == "Square") {
-        return size * size;
-    }
-    return 0;
+    // if(season==0){
+    //     return "it's Summer holidays"
+    // }
 };
-console.log(getArea("Circle", 20));
-console.log(getArea("Square", 10));
-var printMessage = function (type) {
-    if (type.type == "success") {
-        console.log(type.type);
-        console.log(type.message);
-    }
-    else if (type.type == "error") {
-        console.log(type.type);
-        console.log(type.errorcode);
-    }
-};
-var s = {
-    type: "success",
-    message: "hello world"
-};
-var e = {
-    type: "error",
-    errorcode: 123
-};
-printMessage(s);
-console.log("-----------------");
-printMessage(e);
-// Intersection
-var obj1 = {
-    name: "subhan"
-};
-var obj2 = {
-    age: 1223
-};
-var merge = function (obj1, obj2) {
-    return __assign(__assign({}, obj1), obj2);
-};
-var merge_A = merge(obj1, obj2);
-console.log(merge_A);
+console.log(getSeasonMessage(Season.Summer));
