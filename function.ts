@@ -29,7 +29,7 @@ console.log(greet("dsjds"))
 console.log(greet())
 
 
-// Pratice Questions 
+// Practice Questions 
 
 // Basic Function 
 const calculateArea=(lenght:number,width:number):number=>{
