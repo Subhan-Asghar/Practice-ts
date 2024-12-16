@@ -1,21 +1,42 @@
-// Never
-function throwError(message:string):never{
-    console.log("...")
-    throw new Error(message);
+// Narrowing
+const narrow=(num:number|string)=>{
+    if(typeof num==="number"){
+        console.log("The num is number ",num);
+    }
+    else{
+        console.log("The num is String ",num);
+    }
 }
+let num:number=123;
+narrow(num);
+let num1:string="qwe";
+narrow(num1)
 
-console.log(throwError("XYZ"))
-
-// Void
-function VoidFn():void{
-    console.log("Void Function")
+// Class
+class Dog{
+    
+    Bow(){
+        console.log("BOW");
+    }
 }
+class Cat{
+    Meow(){
+        console.log("Meow")
+    }
+}
+const classnarrow=(Animal:Dog|Cat)=>{
+    if(Animal instanceof Dog){
+        Animal.Bow();
+    }
+    else if(Animal instanceof Cat){
+        Animal.Meow();
+    }
+    else{
+        console.log("Failed")
+    }
 
-VoidFn()
-
-// Unknown
-let num:unknown;
-num=123;
-console.log(num)
-num="abc";
-console.log(num)
+}
+let cat=new Cat();
+let dog=new Dog();
+classnarrow(cat)
+classnarrow(dog)
